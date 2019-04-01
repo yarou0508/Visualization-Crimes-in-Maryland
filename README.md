@@ -1,3 +1,3 @@
-# Visualization-2016-H1-B-petitions
+# Visualization-Crimes in Maryland
 
-This repository contains data, code, plots for 2016 H1-B petitions analysis.
+This repository contains data, code, plots to analyze Crimes in Maryland.
