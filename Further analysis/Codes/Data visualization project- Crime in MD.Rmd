@@ -1,0 +1,142 @@
+---
+title: "Is Crime Far Away From Marylanders?"
+author: "Yarou Xu, Fengdi Li, Yifan Wu, Yuqi Wang"
+date: "October 16, 2018"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+## $I$. Nationwide Crime .
+
+```{r, out.width = "600px"}
+knitr::include_graphics("Dataset3-scatterplot-total-crime.png")
+```
+
+<center>[Python seaborn code for Fig.1](https://github.com/yarou0508/Visualization-503-project-1/blob/master/EDA/Codes/Dataset3-scatter-crime-US.py)</center>
+
+The national landscape of crime condition was investigated at the beginning. Thanks to unremitting efforts of the US government and people, as seen on the above graph, nationwide crime is gradually controlled. From 1995 to 2017, the total crime number for the United States has kept the declining trend with slight fluctuation.
+
+```{r, out.width = "1000px"}
+knitr::include_graphics("Dataset3-scatterplot-violent-property.png")
+```
+
+<center>[Python seaborn code for Fig.2](https://github.com/yarou0508/Visualization-503-project-1/blob/master/EDA/Codes/Dataset3-scatter-crime-US.py)</center>
+
+Digging into types of crime, the above graph divides the total crime into two categories--violent crime and property crime, where the y-axis represents the percentage of each crime category over the total crime number. According to the graph, the majority type is property crime and the ratio of violent v.s. property is about 1:8. However, as time goes by, the violent crime ratio has shown a rising trend recently, which indicates an increase in violent crime in the near future.
+
+```{r, out.width = "800px"}
+knitr::include_graphics("Dataset3-facet.png")
+```
+
+<center>[R ggplot code for Fig.3](https://github.com/yarou0508/Visualization-503-project-1/blob/master/EDA/Codes/Dataset3_facet_by_type.R)</center>
+
+In this graph, 7 more subdivided crime categories are further explored. For each crime category, the y-axis represents the crime rate per 100,000 inhabitants after normalization transformation, so that all crime types can be compared in the same scale. The graph also presents that murder, rape, and aggravated assault, which belong to violent crime, all show rising trends in recent years. And this result is consistent with the total violent crime. On the other hand, burglary and larceny-theft, which belong to the property crime, continuously decreasing.
+
+```{r, out.width = "1000px"}
+knitr::include_graphics("Dataset7-Stacked Bar - Crime Rate by State.png")
+```
+
+<center>[Python matplotlib code for Fig.4](https://github.com/yarou0508/Visualization-503-project-1/blob/master/EDA/Codes/Dataset7-bar-crime-by-state.py)</center>
+
+Does every state in the U.S. all shares similar crime conditions? To answer this question, the above bar-chart break the total nation numbers into states in 2017. A higher bar indicates a higher rate of crime, as presented in the graph above, D.C. is the state with the highest crime rate, while Puerto Rico is the lowest. The highlighted target, Maryland, is located in the middle, which indicates an average crime rate level among all states in the U.S. And it is also evident that the property crime rate is a lot higher than violent crime rate.
+
+## $II$.Crime in Maryland.
+
+```{r, out.width = "600px"}
+knitr::include_graphics("Dataset4-Pie Chart - Crime Rate by Type.png")
+```
+
+<center>[Python pandas code for Fig.5](https://github.com/yarou0508/Visualization-503-project-1/blob/master/EDA/Codes/Dataset4-pie-crime-by-type.py)</center>
+
+Violent crime includes murder, rape, robbery, and aggravated assault; property crime covers brake and entering, larceny-theft, and motor Vehicle theft. According to the pie chart above, in 2016, larceny-theft is the most common type of crime in Maryland, which involves the unlawful taking of the personal property of another person or business. Murder, considered as the most serious crime, shares the minimum proportion in the chart.  
+
+```{r, out.width = "600px"}
+knitr::include_graphics("Dataset4-boxplot.png")
+```
+
+<center>[Python matplotlib code for Fig.6](https://github.com/yarou0508/Visualization-503-project-1/blob/master/EDA/Codes/Dataset4-boxplot-crime-by-type.py)</center>
+
+The boxplot represents the distribution of seven different crime types reported in Maryland, colored by two crime categories. It indicates that property category crime ratios have larger year-to-year variation, compared to violent crime ratios.
+
+## $III$. Is Crime related to Geolocation?
+### 1. Crime by county
+```{r, out.width = "1000px"}
+knitr::include_graphics("Dataset5-map-tableau.png")
+```
+
+<center>[Fig.7 Tableau interactive map for crime rate in MD by county](https://public.tableau.com/views/CrimeMap_15/Dashboard1?:embed=y&:display_count=yes)</center>
+
+The heat-map above intuitively presents the crime rate by geographic location of each county/city in Maryland. Baltimore city, the darkest orange block in the map, has the highest crime rate. Besides, the area around Baltimore city and the area at the right bottom corner generally has a higher crime rate compared to other counties. 
+
+```{r, out.width = "800px"}
+knitr::include_graphics("Dataset5-heatmap_violent_property.png")
+```
+
+<center>[Python seaborn code for Fig.8](https://github.com/yarou0508/Visualization-503-project-1/blob/master/EDA/Codes/Dataset5-heatmap-crime-by-county.py)</center>
+
+The two complimentary heat maps show the relationship between Violent Crime percentage and Property Crime percentage. They are complementary since for each county, Violent Crime percentage + Property Crime percentage = 1, as in these two categories include all crime type studied. From two maps, there is an increasing trend of violent crime percentage among two major crime categories from late 1990s. 
+
+### 2. Crime by community type
+
+```{r, out.width = "1000px"}
+knitr::include_graphics("Dataset1-radar1.png")
+```
+
+<center>[Python matplotlib code for Fig.9](https://github.com/yarou0508/Visualization-503-project-1/blob/master/EDA/Codes/Dataset1-radar.py)</center>
+
+```{r, out.width = "1000px"}
+knitr::include_graphics("Dataset1-radar2.png")
+```
+
+<center>[Python matplotlib code for Fig.10](https://github.com/yarou0508/Visualization-503-project-1/blob/master/EDA/Codes/Dataset1-radar.py)</center>
+
+Above radar-plots represent the distribution of seven crime types across 3 community types in Maryland: Metropolitan area, non-Metropolitan area, and Outside-City area. Larceny-theft is the dominant crime type amongst all the 7 types, the non-Metropolitan area has a higher burglary occurrence than the other two, and Metropolitan area has higher robbery and motor vehicle theft occurrences compared to the other two community types. 
+
+``` {r}
+df_chi = read.csv("chi_df.csv")
+row.names(df_chi) <- df_chi$X
+df_chi <- df_chi[-1]
+chisq.test(df_chi)
+```
+
+A chi-square independence test is applied to evaluate if crime types in three communities are correlated. In this case, p is greater than 0.05, so it is reasonable to believe that three crime type distributions are independent. In different types of communities, certain kind of crime will occur more frequently. 
+
+## $IV$. Is Crime related to Population?
+
+```{r, out.width = "1400px"}
+knitr::include_graphics("Dataset5-bubble.png")
+```
+
+<center>[Python seaborn code for Fig.11](https://github.com/yarou0508/Visualization-503-project-1/blob/master/EDA/Codes/Dataset5-bubbleplot.py)</center>
+
+These 3 sub-plots represent the relationship between population size and crime rate in 1975, 1989, and 2003. In the graph, each bubble represents a county, and the radius of the bubble represents the population size. The top-left corner of the bubble plot indicates a higher violent crime proportion, while the right-bottom corner indicates a higher property crime proportion.  And the form of a straight line with a gradient of -1 is because their sum is 1. Since the distribution of the large and small bubbles are scattered evenly along the line, this indicates population size has no relationship with the violent crime proportion. 
+
+## $V$. Is Crime related to Time?
+
+```{r, out.width = "1000px"}
+knitr::include_graphics("Dataset2-densityplot-weekday-hour.png")
+```
+
+<center>[Python seaborn code for Fig.12](https://github.com/yarou0508/Visualization-503-project-1/blob/master/EDA/Codes/Dataset2-densityplot.py)</center>
+
+A temporal factor analysis is also conducted besides previous spatial analyses. Crime occurrence time data was chosen to test the hypothesis, while it turned out that the crime number has little connection with weekdays because the crime number remained nearly the same for every weekday for all 3 years. However, crimes occurred less often over the weekend. On the other hand, crime happened more frequently after dark, less likely from 4 AM to 7 AM, so early morning is the safest time during the day.
+
+```{r, out.width = "1000px"}
+knitr::include_graphics("Dataset2-densityplot-season-month.png")
+```
+<center>season 0 = winter, season 1 = spring, season 2= summer, season 3 = autumn</center>
+
+<center>[Python seaborn code for Fig.13](https://github.com/yarou0508/Visualization-503-project-1/blob/master/EDA/Codes/Dataset2-densityplot.py)</center>
+
+A study released by the US Dept. of Justice in 2014 found that crime rates are often lower in the fall and winter while peaking in the summer. However, the crime data in Maryland shows a different result. In the above plot, the crime data for 2016 and 2018 is incomplete which both lack of several months so that the seasonal crime density varies in these two years. In 2017, crime numbers are nearly the same in every month which indicates that season does not affect crime. The result is the same as in the case of the month. Months have no influence on Crime.  
+
+## $VI$. Is Crime related to Law Enforcement?
+
+```{r, out.width = "1000px"}
+knitr::include_graphics("Dataset6-Pyramid - Law Enforcement 2016.png")
+```
+
+<center>[R ggplot2 code for Fig.14](https://github.com/yarou0508/Visualization-503-project-1/blob/master/EDA/Codes/Dataset6-pyramid-law-enforcement.R)</center>
+
+The Violent Crime Control and Law Enforcement Act of 1994 proposed the highest crime bill in the history of the United States, which indicates that law enforcement is related to crime. On the above pyramid graph, the law enforcement employees rate differs by county. From bottom to top in the pyramid graph, the counties are organized according to the decreasing order of total crime rate. Generally, the county officer rate is a lot more than the civilian rate, while this relationship is different in St. Mary's, Washington and Garrett County. However, no clear trend observed on the graph, which indicates that the rate of law enforcement is likely not correlated to the crime rate.  
