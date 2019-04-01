@@ -1,0 +1,29 @@
+County,CountyFP,Labor Force,Employment (by place of residence),Unemployment,Unemployment Rate (%),"Labor Force Participation Rate, Total (%)",Average Annual Employment (by place of work),"Average Weekly Wage, Total ($ Dollars)",Number of Business Establishments,Number of Business Establishments with 100 or More Workers
+Allegany County,1,32514,30640,1874,5.8,52.6,29014,735,1492,33
+Anne Arundel County,3,309214,298195,11019,3.6,70.7,269386,1120,14932,377
+Baltimore County,5,453197,433601,19596,4.3,66.5,374646,1052,21031,536
+Calvert County,9,49925,48123,1802,3.6,69.6,24273,1046,1813,22
+Caroline County,11,17936,17167,769,4.3,64.7,9479,787,630,7
+Carroll County,13,94869,91658,3211,3.4,68.7,58566,836,4459,70
+Cecil County,15,53107,50558,2549,4.8,65.9,31774,911,1852,36
+Charles County,17,85792,82373,3419,4,68.8,41650,881,2767,41
+Dorchester County,19,15743,14844,899,5.7,64.3,10870,769,672,17
+Frederick County,21,131266,126505,4761,3.6,71.1,100643,961,6281,134
+Garrett County,23,15612,14798,814,5.2,60.1,11689,654,844,14
+Harford County,25,138729,133327,5402,3.9,69,93443,988,5717,100
+Howard County,27,182804,177062,5742,3.1,72.4,170266,1273,9939,291
+Kent County,29,10308,9846,462,4.5,57.4,7885,763,691,9
+Montgomery County,31,557412,539132,18280,3.3,71.8,468802,1413,32664,686
+Prince George's County,33,511766,490451,21315,4.2,71.7,319654,1088,15626,431
+Queen Anne's County,35,27125,26126,999,3.7,68.6,14682,761,1407,10
+St. Mary's County,37,55310,53104,2206,4,67.8,43736,1274,2040,43
+Somerset County,39,9436,8793,643,6.8,40.9,6713,862,417,7
+Talbot County,41,19752,18963,789,4,59.5,19369,797,1515,25
+Washington County,43,76209,72697,3512,4.6,60.7,66602,804,3406,92
+Wicomico County,45,51488,48566,2922,5.7,65.3,45109,839,2497,50
+Worcester County,47,25699,23514,2185,8.5,59.5,24961,635,2136,19
+Baltimore City,510,294248,276206,18042,6.1,61.8,340069,1250,13297,410
+Source,,"Maryland Department of Labor, Licensing and Regulation","Maryland Department of Labor, Licensing and Regulation","Maryland Department of Labor, Licensing and Regulation","Maryland Department of Labor, Licensing and Regulation",U.S. Census Bureau,"Maryland Department of Labor, Licensing and Regulation","Maryland Department of Labor, Licensing and Regulation","Maryland Department of Labor, Licensing and Regulation",U. S. Census Bureau
+Date of Data,,Date of Data: 2017,Date of Data: 2017,Date of Data: 2017,Date of Data: 2017,Date of Data: 2012-2016,Date of Data: 2017,Date of Data: 2017,Date of Data: 2017,Date of Data: 2016
+Note,,By place of residence.,By place of residence.,By place of residence.,By place of residence.,Percentage of the population age sixteen and older who are in the labor force.,By place of work.,By place of work.,"Establishments are ""reporting units,"" the economic unit for which data are submitted by an employer for Maryland's QCEW Program.",
+Quote,,,,,,,,,,
