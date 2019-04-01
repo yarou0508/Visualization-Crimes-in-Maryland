@@ -1,3 +1,3 @@
-# Visualization-503-project-1
+# Visualization-2016-H1-B-petitions
 
-This repository contains data, code, plots for visualization in course ANLY-503.
+This repository contains data, code, plots for 2016 H1-B petitions analysis.
